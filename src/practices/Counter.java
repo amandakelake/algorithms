@@ -1,4 +1,4 @@
-package algorithms4;
+package practices;
 
 public class Counter {
     private final String name;

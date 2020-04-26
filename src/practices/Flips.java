@@ -1,4 +1,4 @@
-package algorithms4;
+package practices;
 
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
