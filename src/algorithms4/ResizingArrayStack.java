@@ -13,7 +13,6 @@ public class ResizingArrayStack<Item> implements Iterable<Item> {
     public boolean isEmpty() {
         return N == 0;
     }
-
     public int size() {
         return N;
     }
@@ -47,7 +46,6 @@ public class ResizingArrayStack<Item> implements Iterable<Item> {
     public Iterator<Item> iterator() {
         return new ReverseArrayIterator();
     }
-
     private class ReverseArrayIterator implements Iterator<Item> {
         // 支持LIFO的迭代
         private int i = N;
