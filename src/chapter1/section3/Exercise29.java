@@ -5,6 +5,10 @@ import edu.princeton.cs.algs4.StdOut;
 import java.util.Iterator;
 import java.util.StringJoiner;
 
+/**
+ *
+ * @param <Item>
+ */
 public class Exercise29<Item> implements Iterable<Item> {
     private class Node {
         Item item;
@@ -38,6 +42,7 @@ public class Exercise29<Item> implements Iterable<Item> {
                 node.next = last.next; // 将新插入的结点指向表头
                 last.next = node; // 原先的last结点指向新的入队列的结点
             }
+            last = node; // 答案中没有把node赋值给last, 还是要自己多跑跑测试  验证是否正确
         }
         size++;
     }
@@ -94,7 +99,6 @@ public class Exercise29<Item> implements Iterable<Item> {
         queue.enqueue(4);
 
         StringJoiner queueItems = new StringJoiner(" ");
-        // TODO 遍历环形链表的顺序 从last开始？
         for(int item: queue) {
             queueItems.add(String.valueOf(item));
         }
