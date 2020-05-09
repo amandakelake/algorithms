@@ -4,7 +4,6 @@ import java.util.Iterator;
 
 /**
  * 下压堆栈（链表实现）
- *
  * @param <Item>
  */
 public class LinkedListStack<Item> implements Iterable<Item> {

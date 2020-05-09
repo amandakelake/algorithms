@@ -11,7 +11,7 @@ import java.util.StringJoiner;
  *
  * @param <Item>
  */
-public class Exercise32<Item> implements Iterable<Item> {
+public class Exercise32_Steque<Item> implements Iterable<Item> {
     private class Node {
         Item item;
         Node previous;
@@ -96,7 +96,7 @@ public class Exercise32<Item> implements Iterable<Item> {
     }
 
     public static void main(String[] args) {
-        Exercise32<Integer> steque = new Exercise32<>();
+        Exercise32_Steque<Integer> steque = new Exercise32_Steque<>();
         steque.push(1);
         steque.push(2);
         steque.push(3);

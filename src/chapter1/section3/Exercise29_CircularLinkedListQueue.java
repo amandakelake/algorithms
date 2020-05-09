@@ -6,10 +6,10 @@ import java.util.Iterator;
 import java.util.StringJoiner;
 
 /**
- *
+ * 用环形链表实现Queue
  * @param <Item>
  */
-public class Exercise29<Item> implements Iterable<Item> {
+public class Exercise29_CircularLinkedListQueue<Item> implements Iterable<Item> {
     private class Node {
         Item item;
         Node next;
@@ -92,7 +92,7 @@ public class Exercise29<Item> implements Iterable<Item> {
     }
 
     public static void main(String[] args) {
-        Exercise29<Integer> queue = new Exercise29<>();
+        Exercise29_CircularLinkedListQueue<Integer> queue = new Exercise29_CircularLinkedListQueue<>();
         queue.enqueue(1);
         queue.enqueue(2);
         queue.enqueue(3);

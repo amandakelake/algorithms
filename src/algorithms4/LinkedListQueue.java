@@ -4,7 +4,6 @@ import java.util.Iterator;
 
 /**
  * 基于链表实现的先进先出队列
- *
  * @param <Item>
  */
 public class LinkedListQueue<Item> implements Iterable<Item> {
