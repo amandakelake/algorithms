@@ -3,19 +3,26 @@ package chapter2_sorting;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
-public class Selection {
+public class Shell {
     public static void sort(Comparable[] a) {
-        // 先按升序
+        // 对插入排序的优化，插入排序只会交换相邻的元素，而且只能一点一点的挪过去
+        // 希尔排序以交换不相邻的元素来对数组局部进行排序
         int N = a.length;
-        // 遍历a, 将a[i]与 a[i+1...N]中最小元素交换
-        for (int i = 0; i < N; i++) {
-            int min = i; // 最小元素索引
-            for (int j = i+1; j < N; j++) {
-                if (less(a[j], a[min])) {
-                    min = j;
+        int h = 1;
+        // 根据数组长度动态调整h大小
+        while (h < N/3) {
+            h = 3*h + 1;
+        }
+        while (h >=1) {
+            // 将数组变为h有序
+            for (int i = h; i < N; i++) {
+                // 将a[i] 插入到 a[i-h]、a[i-2h]、a[i-3h]...中
+                for (int j=i; j >=h && less(a[j], a[j-h]); j -= h) {
+                    exch(a, j, j-h);
                 }
             }
-            exch(a, i, min);
+            // 不断缩小h直到1
+            h = h/3;
         }
     }
 
@@ -38,7 +45,7 @@ public class Selection {
 
     private static boolean isSorted(Comparable[] a) {
         for (int i = 0; i < a.length; i++) {
-            if (less(a[i], a[i - 1])) return false;
+            if (less(a[i], a[i-1])) return false;
         }
         return true;
     }

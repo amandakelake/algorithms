@@ -40,7 +40,8 @@ public class Insertion {
     }
 
     public static void main(String[] args) {
-        String[] a = StdIn.readAllStrings();
+//        String[] a = StdIn.readAllStrings();
+        Integer[] a = {3,23,5,0,8,12,45};
         sort(a);
         assert isSorted(a);
         show(a);
